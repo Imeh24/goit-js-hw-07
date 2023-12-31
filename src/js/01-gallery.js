@@ -25,6 +25,11 @@ const createGallery = (el) => {
 const photosMarkup = createGallery(galleryItems);
 galleryList.insertAdjacentHTML("beforeend", photosMarkup);
 
+
+
+// adding basicLightbox
+
+
 const handleGalleryClick = (event) => {
   event.preventDefault();
 
@@ -33,8 +38,13 @@ const handleGalleryClick = (event) => {
   }
   const urlOriginal = event.target.dataset.source;
 
+
+// adding instance
+
   const instance = basicLightbox.create(`<img src="${urlOriginal}">`);
   instance.show();
+
+  // closeEscape
 
   const handleonEscKeyPress = (event) => {
     if (event.key === "Escape") {
